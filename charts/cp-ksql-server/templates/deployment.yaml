@@ -97,11 +97,6 @@ spec:
         configMap:
           name: {{ template "cp-ksql-server.fullname" . }}-jmx-configmap
       {{- end }}
-      {{- if .Values.ksql.headless }}
-      - name: ksql-queries
-        configMap:
-          name: {{ template "cp-ksql-server.fullname" . }}-ksql-queries-configmap
-      {{- end }}
       {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}

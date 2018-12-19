@@ -77,7 +77,7 @@ spec:
             value: {{ template "cp-schema-registry.groupId" . }}
           - name: SCHEMA_REGISTRY_MASTER_ELIGIBILITY
             value: "true"
-          - name: KAFKA_HEAP_OPTS
+          - name: SCHEMA_REGISTRY_HEAP_OPTS
             value: "{{ .Values.heapOptions }}"
           {{ range $configName, $configValue := .Values.configurationOverrides }}
           - name: SCHEMA_REGISTRY_{{ $configName | replace "." "_" | upper }}
